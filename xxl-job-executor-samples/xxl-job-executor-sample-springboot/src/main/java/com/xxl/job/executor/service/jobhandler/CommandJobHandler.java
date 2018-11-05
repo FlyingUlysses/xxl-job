@@ -20,7 +20,7 @@ import java.io.InputStreamReader;
 public class CommandJobHandler extends IJobHandler {
 
     @Override
-    public ReturnT<String> execute(String param) throws Exception {
+    public ReturnT<String> execute(Integer jobId,String param) throws Exception {
         String command = param;
         int exitValue = -1;
 

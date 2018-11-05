@@ -49,7 +49,6 @@ public class ExecutorRouteLFU extends ExecutorRouter {
         });
 
         Map.Entry<String, Integer> addressItem = lfuItemList.get(0);
-        String minAddress = addressItem.getKey();
         addressItem.setValue(addressItem.getValue() + 1);
 
         return addressItem.getKey();

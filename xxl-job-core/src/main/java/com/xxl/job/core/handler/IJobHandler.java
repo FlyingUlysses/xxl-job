@@ -25,7 +25,7 @@ public abstract class IJobHandler {
 	 * @return
 	 * @throws Exception
 	 */
-	public abstract ReturnT<String> execute(String param) throws Exception;
+	public abstract ReturnT<String> execute(Integer jobId,String param) throws Exception;
 
 
 	/**

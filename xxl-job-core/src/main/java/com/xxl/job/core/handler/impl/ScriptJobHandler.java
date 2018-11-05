@@ -15,7 +15,8 @@ import java.io.File;
  */
 public class ScriptJobHandler extends IJobHandler {
 
-    private int jobId;
+	@SuppressWarnings("unused")
+	private int jobId;
     private long glueUpdatetime;
     private String gluesource;
     private GlueTypeEnum glueType;
@@ -46,7 +47,7 @@ public class ScriptJobHandler extends IJobHandler {
     }
 
     @Override
-    public ReturnT<String> execute(String param) throws Exception {
+    public ReturnT<String> execute(Integer jobId,String param) throws Exception {
 
         if (!glueType.isScript()) {
             return new ReturnT<String>(IJobHandler.FAIL.getCode(), "glueType["+ glueType +"] invalid.");

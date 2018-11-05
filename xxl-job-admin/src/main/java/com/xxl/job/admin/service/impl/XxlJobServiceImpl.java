@@ -305,7 +305,6 @@ public class XxlJobServiceImpl implements XxlJobService {
 		return dashboardMap;
 	}
 
-	private static final String TRIGGER_CHART_DATA_CACHE = "trigger_chart_data_cache";
 	@Override
 	public ReturnT<Map<String, Object>> chartInfo(Date startDate, Date endDate) {
 		/*// get cache

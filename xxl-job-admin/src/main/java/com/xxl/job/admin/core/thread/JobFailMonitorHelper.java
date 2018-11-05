@@ -4,7 +4,6 @@ import com.xxl.job.admin.core.conf.XxlJobAdminConfig;
 import com.xxl.job.admin.core.model.XxlJobGroup;
 import com.xxl.job.admin.core.model.XxlJobInfo;
 import com.xxl.job.admin.core.model.XxlJobLog;
-import com.xxl.job.admin.core.schedule.XxlJobDynamicScheduler;
 import com.xxl.job.admin.core.trigger.TriggerTypeEnum;
 import com.xxl.job.admin.core.util.I18nUtil;
 import com.xxl.job.admin.core.util.MailUtil;
@@ -46,7 +45,7 @@ public class JobFailMonitorHelper {
 				while (!toStop) {
 					try {
 						List<Integer> jobLogIdList = new ArrayList<Integer>();
-						int drainToNum = JobFailMonitorHelper.instance.queue.drainTo(jobLogIdList);
+						JobFailMonitorHelper.instance.queue.drainTo(jobLogIdList);
 
 						if (CollectionUtils.isNotEmpty(jobLogIdList)) {
 							for (Integer jobLogId : jobLogIdList) {
@@ -99,7 +98,7 @@ public class JobFailMonitorHelper {
 
 				// monitor all clear
 				List<Integer> jobLogIdList = new ArrayList<Integer>();
-				int drainToNum = getInstance().queue.drainTo(jobLogIdList);
+				getInstance().queue.drainTo(jobLogIdList);
 				if (jobLogIdList!=null && jobLogIdList.size()>0) {
 					for (Integer jobLogId: jobLogIdList) {
 						XxlJobLog log = XxlJobAdminConfig.getAdminConfig().getXxlJobLogDao().load(jobLogId);

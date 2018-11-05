@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class HttpJobHandler extends IJobHandler {
 
 	@Override
-	public ReturnT<String> execute(String param) throws Exception {
+	public ReturnT<String> execute(Integer jobId,String param) throws Exception {
 
 		// valid
 		if (param==null || param.trim().length()==0) {
